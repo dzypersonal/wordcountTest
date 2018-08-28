@@ -20,7 +20,8 @@ public class WordCount extends Configured implements Tool {
 
     @Override
     public int run(String[] args) throws Exception {
-        System.out.println("实际参数: "+args);
+        for(int i=0;i<args.length;i++)
+            System.out.println(String.format("参数索引: %d, 实际参数: %s",i,args[i]));
         //--input xxx --output xxx
         Configuration conf = new Configuration();
         Job job = Job.getInstance(conf, "word count");
